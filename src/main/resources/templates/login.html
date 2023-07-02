@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Giriş Yap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <div class="loginform">
+    <h1 class=" font-weight-bolder display-4 text-center my-4">Giriş Ekranı</h1>
+    <form action="login" class="d-flex flex-column" method="post">
+      <div class="info ">
+        <label class="form-label" for="email"> Email </label>
+        <input class="form-control" th:value="${email}" id="email" name="email" placeholder="Lütfen email adresinizi giriniz"
+               type="email">
+      </div>
+      <div class="info ">
+        <label class="form-label" for="password"> Şifre </label>
+        <input class="form-control" id="password" name="password" placeholder="Lütfen şifrenizi giriniz"
+               type="password">
+      </div>
+      <div th:text="${result}" ></div>
+      <div class="info mybuttons col-12 d-flex  justify-content-around">
+
+        <button class="font-weight-bold   align-self-center btn btn-outline mt-3" type="submit"> Giriş
+          Yap
+        </button>
+        <a th:href="${'/user/register'}" class="font-weight-bold  btn btn-outline  mt-3  align-self-center" href="">Yeni kayıt</a>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>
